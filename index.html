@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="src/output.css" rel="stylesheet" />
+    <!-- google font start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet" />
+    <!-- google font end -->
+    <title>Cetak Nota</title>
+    <style></style>
+  </head>
+  <body class="bg-sky-100 print:bg-white">
+    <div class="container mx-auto m-8 print:w-full print:m-0">
+      <div class="=Canvas print:m-0 print:w-screen">
+        <!-- Judul Section Start -->
+        <section id="judul" class="judul mb-10 print:hidden">
+          <h1 class="font-LecekerliOne font-light text-5xl text-center">Aplikasi Pembuat Nota</h1>
+        </section>
+        <!-- Judul Section End -->
+
+        <!-- Nota Section -->
+        <section id="nota-section" class="nota bg-white p-6 rounded-lg shadow-md mb-5 print:p-0 print:m-0 print:shadow-none print:rounded-none">
+          <div id="notacetak">
+            <!-- Header Nota -->
+            <div class="nota-header text-left border-b pb-1 mb-1">
+              <div class="flex flex-nowrap">
+                <div class="w-1/3 print:leading-3">
+                  <h1 class="text-4xl font-bold print:text-base print:leading-4">Cube Komputer & Printer</h1>
+                  <p class="text-md text-gray-600 print:text-xs print:leading-3">Jl. Batangan-Jaken KM-4, Kuniran 3/2</p>
+                  <p class="text-md text-gray-600 print:text-xs print:leading-3">Batangan, Kab. Pati</p>
+                  <p id="tlp" class="text-md text-gray-600 print:text-xs print:leading-3">Telp/WA 1: 0895-2221-5156</p>
+                  <p id="tanggal" class="text-md mt-1 text-gray-600 print:text-xs print:leading-4">Tanggal: -</p>
+                  <p id="admin" class="text-md text-gray-600 print:text-xs print:leading-4">Admin: -</p>
+                  <p id="no-nota" class="text-md text-gray-600 print:text-xs print:leading-4">No Nota: -</p>
+                </div>
+                <div class="w-1/3 judul">
+                  <h1 class="text-xl text-center font-bold uppercase print:text-xs text-gray-400 print:leading-4">invoice</h1>
+                  <hr class="w-10 m-auto border-t-2 border-gray-400 leading-3" />
+                  <h1 class="text-xl text-center font-bold uppercase print:text-xs text-gray-400 print:leading-4">tunai</h1>
+                </div>
+                <div class="w-1/3 pl-10">
+                  <p class="text-md text-gray-600 print:text-xs">Kepada :</p>
+                  <p id="kepada" class="text-md text-gray-600">-</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tabel Nota -->
+            <div class="nota-body">
+              <table class="w-full border-collapse border border-gray-300 print:text-xs print:leading-3">
+                <thead id="aksen" class="bg-gray-200">
+                  <tr>
+                    <th class="border py-1 border-gray-300 p-2 text-left text-gray-700">No</th>
+                    <th class="border py-1 border-gray-300 p-2 text-left text-gray-700">Barang/Jasa</th>
+                    <th class="border py-1 border-gray-300 p-2 text-right text-gray-700">Jumlah</th>
+                    <th class="border py-1 border-gray-300 p-2 text-right text-gray-700">Harga</th>
+                    <th class="border py-1 border-gray-300 p-2 text-right text-gray-700">Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody id="nota-body">
+                  <!-- Data Barang/Jasa -->
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="4" class="border py-1 border-gray-300 border-b-white border-l-white p-2 text-right font-bold text-gray-800">Total</td>
+                    <td id="grand-total" class="border py-1 border-gray-300 border-b-gray-300 p-2 text-right font-bold text-gray-800">0</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <br />
+            <!-- Footer Nota -->
+            <div class="Footer nota flex text-gray-500 leading-4 text-sm print:leading-3 print:text-xs print:text-gray-400">
+              <div class="w-2/4">
+                <p class="note">Perhatian!!!</p>
+                <p class="note">1. Barang yang sudah dibeli tidak dapat dikembalikan/ditukar</p>
+                <p class="note">2. Tidak bertanggung jawab atas software yang ada di dalamnya</p>
+                <p class="note">3. Garansi tidak berlaku diluar part yang di ganti</p>
+                <p class="note">4. Garansi hiang jika segel rusak</p>
+              </div>
+              <div class="w-1/4">
+                <table class="flex justify-center text-center table-auto text-gray-700">
+                  <thead>
+                    <tr>
+                      <th>Customer</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <br />
+                        <br />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>...............</td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="w-1/4">
+                <table class="flex justify-center text-center table-auto text-gray-700">
+                  <thead>
+                    <tr>
+                      <th>Kasir</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <br />
+                        <br />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>...............</td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Nota Section End -->
+
+        <!-- Print Section Start -->
+        <section id="print-section" class="flex flex-wrap lg:flex-nowrap mb-5 justify-evenly print:hidden">
+          <button onclick="print()" class="bg-sky-400 text-white px-4 py-2 rounded shadow hover:opacity-7">Print</button>
+        </section>
+        <!-- Print Section End -->
+
+        <!-- Input Section Start -->
+        <section id="input-section" class="flex flex-wrap lg:flex-nowrap mb-5 justify-around print:hidden">
+          <!-- Form Input Header -->
+          <section class="w-full lg:w-1/2 form-header bg-white p-6 rounded-lg shadow mx-3" id="form-header">
+            <h2 class="text-xl font-bold mb-4">Form Input Header Nota</h2>
+            <form id="header-form" class="space-y-4">
+              <div>
+                <label for="to" class="block font-medium">Kepada:</label>
+                <input type="text" id="to" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Nama pelanggan" required />
+              </div>
+              <div>
+                <label for="date" class="block font-medium">Tanggal:</label>
+                <input type="date" id="date" class="w-full border border-gray-300 rounded px-3 py-2" required />
+              </div>
+              <div>
+                <label for="Fadmin" class="block font-medium">Admin:</label>
+                <input type="text" id="Fadmin" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Nama admin" required />
+              </div>
+              <div>
+                <label for="nota-number" class="block font-medium">No Nota:</label>
+                <input type="text" id="nota-number" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Nomor Nota" required />
+              </div>
+              <button type="button" onclick="submitHeader()" class="bg-blue-500 text-white px-4 py-2 rounded shadow">Submit Header</button>
+            </form>
+          </section>
+          <button id="reset-header-btn" onclick="resetHeader()" class="hidden bg-red-500 text-white px-4 py-2 rounded shadow mt-4 lg:mt-0">Reset Header</button>
+
+          <!-- Form Input Tabel -->
+          <section class="w-full lg:w-1/2 form bg-white p-6 rounded-lg shadow mx-3">
+            <!-- Daftar Transaksi -->
+            <div class="mb-4" id="transaction-actions">
+              <h2 class="text-xl font-bold mb-4">List Transaksi</h2>
+              <div id="transaction-list" class="space-y-2">
+                <!-- List transaksi untuk dihapus -->
+              </div>
+            </div>
+
+            <h2 class="text-xl font-bold mb-4">Form Input Nota</h2>
+            <form id="nota-form" class="space-y-4">
+              <div>
+                <label for="item" class="block font-medium">Barang/Jasa:</label>
+                <input type="text" id="item" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Nama barang/jasa" required />
+              </div>
+              <div>
+                <label for="price" class="block font-medium">Harga:</label>
+                <input type="number" id="price" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Harga" required />
+              </div>
+              <div>
+                <label for="quantity" class="block font-medium">Jumlah:</label>
+                <input type="number" id="quantity" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Jumlah" required />
+              </div>
+              <button type="button" onclick="addTransaction()" class="bg-blue-500 text-white px-4 py-2 rounded shadow">Tambah ke Nota</button>
+            </form>
+          </section>
+        </section>
+      </div>
+    </div>
+    <!-- Input Section End -->
+
+    <!-- Footer Section Start -->
+    <footer id="footer" class="flex bg-slate-900 h-40 py-20 text-lime-100 print:hidden">
+      <h1 class="mx-auto">Build With ❤️ Fuad Amsyari</h1>
+    </footer>
+    <!-- Footer Section End -->
+
+    <script>
+      let transactionCount = 0;
+
+      function formatCurrency(value) {
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      }
+
+      function submitHeader() {
+        const to = document.getElementById('to').value;
+        const date = document.getElementById('date').value;
+        const admin = document.getElementById('Fadmin').value;
+        const notaNumber = document.getElementById('nota-number').value;
+
+        document.getElementById('kepada').textContent = to;
+        document.getElementById('tanggal').textContent = `Tanggal: ${date}`;
+        document.getElementById('admin').textContent = `Admin: ${admin}`;
+        document.getElementById('no-nota').textContent = `No Nota: ${notaNumber}`;
+
+        document.getElementById('form-header').classList.add('hidden');
+        document.getElementById('reset-header-btn').classList.remove('hidden');
+      }
+
+      function resetHeader() {
+        document.getElementById('kepada').textContent = '-';
+        document.getElementById('tanggal').textContent = 'Tanggal: -';
+        document.getElementById('admin').textContent = 'Admin: -';
+        document.getElementById('no-nota').textContent = 'NO Nota: -';
+
+        document.getElementById('form-header').classList.remove('hidden');
+        document.getElementById('reset-header-btn').classList.add('hidden');
+      }
+
+      function addTransaction() {
+        const item = document.getElementById('item').value;
+        const price = parseInt(document.getElementById('price').value);
+        const quantity = parseInt(document.getElementById('quantity').value);
+        const subtotal = price * quantity;
+
+        transactionCount++;
+
+        // Tambahkan transaksi ke tabel
+        const row = `
+            <tr id="transaction-${transactionCount}">
+              <td class="border py-1 border-gray-300 p-2 text-center text-gray-600">${transactionCount}</td>
+              <td class="border py-1 border-gray-300 p-2 text-gray-600">${item}</td>
+              <td class="border py-1 border-gray-300 p-2 text-right text-gray-600">${quantity}</td>
+              <td class="border py-1 border-gray-300 p-2 text-right text-gray-600">${formatCurrency(price)}</td>
+              <td class="border py-1 border-gray-300 p-2 text-right text-gray-600">${formatCurrency(subtotal)}</td>
+            </tr>
+          `;
+        document.getElementById('nota-body').insertAdjacentHTML('beforeend', row);
+
+        // Tambahkan transaksi ke daftar List Transaksi
+        const transactionAction = `
+            <div id="transaction-action-${transactionCount}" class="flex justify-between items-center border-b pb-2 mb-2">
+              <p>Transaksi #${transactionCount}: ${item} - ${quantity} x ${formatCurrency(price)}</p>
+              <button class="bg-red-500 text-white px-2 py-1 rounded shadow" onclick="removeTransaction(${transactionCount})">Hapus</button>
+            </div>
+          `;
+        document.getElementById('transaction-list').insertAdjacentHTML('beforeend', transactionAction);
+
+        // Perbarui total keseluruhan
+        const grandTotal = document.getElementById('grand-total');
+        grandTotal.textContent = formatCurrency(parseInt(grandTotal.textContent.replace(/\./g, '')) + subtotal);
+
+        // Reset form input transaksi
+        document.getElementById('nota-form').reset();
+      }
+
+      function removeTransaction(id) {
+        const row = document.getElementById(`transaction-${id}`);
+        const subtotal = parseInt(row.children[4].textContent.replace(/\./g, ''));
+
+        // Hapus total dari subtotal transaksi yang dihapus
+        const grandTotal = document.getElementById('grand-total');
+        grandTotal.textContent = formatCurrency(parseInt(grandTotal.textContent.replace(/\./g, '')) - subtotal);
+
+        // Hapus transaksi dari tabel dan List Transaksi
+        row.remove();
+        document.getElementById(`transaction-action-${id}`).remove();
+      }
+    </script>
+  </body>
+</html>
