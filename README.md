@@ -54,8 +54,7 @@ Aplikasi ini adalah solusi sederhana dan efisien untuk mencetak **nota** tanpa h
 
 ### Tampilan Aplikasi
 
-<img src="./z-cuplikan.png" alt="Logo Perusahaan" width="400">
-![Cuplikan Gambar](./z-cuplikan.png)
+<img src="./z-cuplikan.png" alt="Logo Perusahaan" width="800">
 
 ---
 
