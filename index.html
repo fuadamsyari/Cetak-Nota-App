@@ -31,7 +31,7 @@
                   <h1 class="text-4xl font-bold print:text-base print:leading-4">Cube Komputer & Printer</h1>
                   <p class="text-md text-gray-600 print:text-xs print:leading-3">Jl. Batangan-Jaken KM-4, Kuniran 3/2</p>
                   <p class="text-md text-gray-600 print:text-xs print:leading-3">Batangan, Kab. Pati</p>
-                  <p id="tlp" class="text-md text-gray-600 print:text-xs print:leading-3">Telp/WA 1: 0895-2221-5156</p>
+                  <p id="tlp" class="text-md text-gray-600 print:text-xs print:leading-3">Telp/WA: 0895-2221-5156</p>
                   <p id="tanggal" class="text-md mt-1 text-gray-600 print:text-xs print:leading-4">Tanggal: -</p>
                   <p id="admin" class="text-md text-gray-600 print:text-xs print:leading-4">Admin: -</p>
                   <p id="no-nota" class="text-md text-gray-600 print:text-xs print:leading-4">No Nota: -</p>
@@ -78,7 +78,7 @@
                 <p class="note">Perhatian!!!</p>
                 <p class="note">1. Barang yang sudah dibeli tidak dapat dikembalikan/ditukar</p>
                 <p class="note">2. Tidak bertanggung jawab atas software yang ada di dalamnya</p>
-                <p class="note">3. Garansi tidak berlaku diluar part yang di ganti</p>
+                <p class="note">3. Garansi service hanya untuk part yang di ganti</p>
                 <p class="note">4. Garansi hiang jika segel rusak</p>
               </div>
               <div class="w-1/4">
@@ -147,8 +147,13 @@
                 <input type="text" id="Fadmin" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Nama admin" required />
               </div>
               <div>
-                <label for="nota-number" class="block font-medium">No Nota:</label>
-                <input type="text" id="nota-number" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Nomor Nota" required />
+                <label for="nota-type" class="block font-medium">Jenis Nota:</label>
+                <select id="nota-type" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                  <option value="" disabled selected>Pilih Jenis Nota</option>
+                  <option value="SV">Service</option>
+                  <option value="SL">Penjualan</option>
+                  <option value="SS">Penjualan dan Service</option>
+                </select>
               </div>
               <button type="button" onclick="submitHeader()" class="bg-blue-500 text-white px-4 py-2 rounded shadow">Submit Header</button>
             </form>
@@ -194,6 +199,26 @@
     <!-- Footer Section End -->
 
     <script>
+      // generate nomor nota
+      function generateNomorNota(indikator) {
+        const angkaTetap = '5156';
+        const waktuIndonesia = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
+        const waktu = new Date(waktuIndonesia); // Konversi ke objek Date
+        const bulan = String(waktu.getMonth() + 1).padStart(2, '0'); // Bulan (01-12)
+        const tanggal = String(waktu.getDate()).padStart(2, '0'); // Tanggal (01-31)
+        const tahun = String(waktu.getFullYear()).slice(-2); // Tahun (2 digit terakhir)
+        const hari = waktu.getDay() === 0 ? 7 : waktu.getDay(); // Hari (1-7, dengan Minggu sebagai 7)
+        const jam = String(waktu.getHours()).padStart(2, '0'); // Jam dalam format 24 jam
+        const menit = String(waktu.getMinutes()).padStart(2, '0'); // Menit
+        const jamFormat24 = `${jam}${menit}`; // Gabungkan jam dan menit
+
+        const validIndikator = ['SV', 'SL', 'SS'];
+        const kodeIndikator = validIndikator.includes(indikator) ? indikator : 'NA'; // Default "NA" jika indikator tidak valid
+
+        const nomorNota = `${angkaTetap}${bulan}${tanggal}${tahun}${hari}${jamFormat24}${kodeIndikator}`;
+        return nomorNota;
+      }
+
       let transactionCount = 0;
 
       function formatCurrency(value) {
@@ -204,12 +229,12 @@
         const to = document.getElementById('to').value;
         const date = document.getElementById('date').value;
         const admin = document.getElementById('Fadmin').value;
-        const notaNumber = document.getElementById('nota-number').value;
+        const notaType = document.getElementById('nota-type').value;
 
         document.getElementById('kepada').textContent = to;
         document.getElementById('tanggal').textContent = `Tanggal: ${date}`;
         document.getElementById('admin').textContent = `Admin: ${admin}`;
-        document.getElementById('no-nota').textContent = `No Nota: ${notaNumber}`;
+        document.getElementById('no-nota').textContent = `No Nota: ` + generateNomorNota(notaType);
 
         document.getElementById('form-header').classList.add('hidden');
         document.getElementById('reset-header-btn').classList.remove('hidden');
