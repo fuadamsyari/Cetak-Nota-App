@@ -839,6 +839,10 @@ video {
   font-family: Leckerli One, cursive;
 }
 
+.font-sans {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -957,8 +961,16 @@ video {
     width: 794px;
   }
 
-  .print\:w-screen {
-    width: 100vw;
+  .print\:w-\[a4\] {
+    width: a4;
+  }
+
+  .print\:w-\[\] {
+    width: ;
+  }
+
+  .print\:w-\[\'\'\] {
+    width: '';
   }
 
   .print\:rounded-none {
@@ -972,6 +984,38 @@ video {
 
   .print\:p-0 {
     padding: 0px;
+  }
+
+  .print\:font-\[\'\'\] {
+    font-family: '';
+  }
+
+  .print\:font-\[\'helvetica\'\] {
+    font-family: 'helvetica';
+  }
+
+  .print\:font-\[\'calibri\'\] {
+    font-family: 'calibri';
+  }
+
+  .print\:font-\[\'tahoma\'\] {
+    font-family: 'tahoma';
+  }
+
+  .print\:font-\[\'ver\'\] {
+    font-family: 'ver';
+  }
+
+  .print\:font-\[\'verdana\'\] {
+    font-family: 'verdana';
+  }
+
+  .print\:font-\[\'he\;l\'\] {
+    font-family: 'he;l';
+  }
+
+  .print\:font-\[\'helvetia\'\] {
+    font-family: 'helvetia';
   }
 
   .print\:text-base {
