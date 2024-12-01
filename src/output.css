@@ -645,6 +645,26 @@ video {
   width: 1250px;
 }
 
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-7 {
+  width: 1.75rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-20 {
+  width: 5rem;
+}
+
 .table-auto {
   table-layout: auto;
 }
@@ -961,18 +981,6 @@ video {
     width: 794px;
   }
 
-  .print\:w-\[a4\] {
-    width: a4;
-  }
-
-  .print\:w-\[\] {
-    width: ;
-  }
-
-  .print\:w-\[\'\'\] {
-    width: '';
-  }
-
   .print\:rounded-none {
     border-radius: 0px;
   }
@@ -986,36 +994,8 @@ video {
     padding: 0px;
   }
 
-  .print\:font-\[\'\'\] {
-    font-family: '';
-  }
-
   .print\:font-\[\'helvetica\'\] {
     font-family: 'helvetica';
-  }
-
-  .print\:font-\[\'calibri\'\] {
-    font-family: 'calibri';
-  }
-
-  .print\:font-\[\'tahoma\'\] {
-    font-family: 'tahoma';
-  }
-
-  .print\:font-\[\'ver\'\] {
-    font-family: 'ver';
-  }
-
-  .print\:font-\[\'verdana\'\] {
-    font-family: 'verdana';
-  }
-
-  .print\:font-\[\'he\;l\'\] {
-    font-family: 'he;l';
-  }
-
-  .print\:font-\[\'helvetia\'\] {
-    font-family: 'helvetia';
   }
 
   .print\:text-base {
